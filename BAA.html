@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioAxiom Analytics - Biotechnology & Data Science Consulting</title>
+    <meta name="description" content="Professional biotechnology, bioinformatics, and data analytics consulting services. Expert in research writing, project development, and AI/ML applications.">
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Custom styles for skill bar animations and smooth transitions */
+        :root {
+            --brand: #2563eb; /* Blue-600 */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        /* Reveal animation styles */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Skill bar specific animation */
+        .skill-bar span {
+            display: block;
+            height: 100%;
+            background-color: var(--brand);
+            border-radius: 9999px;
+            text-align: right;
+            padding-right: 0.5rem;
+            color: white;
+            font-size: 0.75rem; /* text-xs */
+            transition: width 1.5s ease-in-out;
+            width: 0%; /* Initial width for animation */
+        }
+        
+        /* Sticky Header */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(6px);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+        }
+        
+        /* Mobile Nav Toggle */
+        #nav.active {
+            display: block;
+        }
+        
+        /* Scroll Top Button */
+        #scrollTop {
+            transition: opacity 0.3s ease-in-out;
+            opacity: 0;
+            pointer-events: none;
+        }
+        #scrollTop.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-extrabold text-blue-600 hover:text-blue-800 transition duration-300">
+                BioAxiom Analytics
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav id="nav" class="hidden md:block">
+                <ul class="flex space-x-6 font-semibold">
+                    <li><a href="#about" class="text-gray-700 hover:text-blue-600 transition duration-300">About</a></li>
+                    <li><a href="#services" class="text-gray-700 hover:text-blue-600 transition duration-300">Services</a></li>
+                    <li><a href="#projects" class="text-gray-700 hover:text-blue-600 transition duration-300">Projects</a></li>
+                    <li><a href="#skills" class="text-gray-700 hover:text-blue-600 transition duration-300">Expertise</a></li>
+                    <li><a href="#contact" class="text-blue-600 border-b-2 border-blue-600 pb-1">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn" class="md:hidden text-gray-700 focus:outline-none" aria-expanded="false" aria-controls="nav">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu (Dropdown) -->
+        <nav id="nav" class="md:hidden hidden bg-white shadow-lg border-t border-gray-100">
+            <ul class="flex flex-col space-y-2 p-4 font-medium">
+                <li><a href="#about" class="block py-2 px-3 rounded-lg hover:bg-blue-50">About</a></li>
+                <li><a href="#services" class="block py-2 px-3 rounded-lg hover:bg-blue-50">Services</a></li>
+                <li><a href="#projects" class="block py-2 px-3 rounded-lg hover:bg-blue-50">Projects</a></li>
+                <li><a href="#skills" class="block py-2 px-3 rounded-lg hover:bg-blue-50">Expertise</a></li>
+                <li><a href="#contact" class="block py-2 px-3 rounded-lg hover:bg-blue-50 text-blue-600">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="py-16 md:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4 leading-tight">
+                    AI-Powered Solutions for <span class="text-blue-600">Life Sciences</span>
+                </h1>
+                <p class="text-xl text-gray-500 mb-8 max-w-3xl mx-auto">
+                    Expert consulting in Biotechnology, Bioinformatics, Data Analytics, and AI/ML, driving research accuracy and innovation.
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#contact" class="px-8 py-3 bg-blue-600 text-white font-semibold rounded-xl shadow-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                        Start a Project
+                    </a>
+                    <a href="#projects" class="px-8 py-3 bg-gray-200 text-gray-800 font-semibold rounded-xl shadow-md hover:bg-gray-300 transition duration-300 transform hover:scale-105">
+                        View Case Studies
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About/Summary Section -->
+        <section id="about" class="py-16 md:py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 reveal">About BioAxiom</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="reveal">
+                        <p class="text-lg text-gray-600 mb-4">
+                            With 11+ years of experience, BioAxiom Analytics specializes in bridging complex life science research with cutting-edge data science techniques. We empower organizations—from R&D to Academia—to achieve breakthroughs in molecular biology, drug discovery, and environmental health.
+                        </p>
+                        <ul class="space-y-3 text-gray-700 list-disc pl-5">
+                            <li>Increased staff efficiency by over 40% through laboratory standard elevation.</li>
+                            <li>Improved research output accuracy by 12-25% using AI/ML methodologies.</li>
+                            <li>Expertise in multi-omics data analysis and innovative project development.</li>
+                        </ul>
+                    </div>
+                    <div class="reveal bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                        <h3 class="text-xl font-semibold text-blue-600 mb-4">Core Focus Areas</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Bioinformatics</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">AI/ML Modeling</span>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm font-medium">Wet-Lab Protocols</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm font-medium">Environmental Tech</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Section -->
+        <section id="services" class="py-16 md:py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 reveal">What We Offer</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg reveal hover:shadow-xl transition duration-300">
+                        <i class="fas fa-brain text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">AI/ML Data Modeling</h3>
+                        <p class="text-gray-600">Develop and deploy custom machine learning models (Random Forest, XGBoost, CNNs) for predictive analysis in environmental, clinical, and biological datasets.</p>
+                    </div>
+                    <!-- Service 2 -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg reveal hover:shadow-xl transition duration-300" data-delay="100">
+                        <i class="fas fa-dna text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Bioinformatics & Drug Discovery</h3>
+                        <p class="text-gray-600">Advanced multi-omics analysis, molecular docking, sequence alignment (BLAST, Clustal Omega), and target identification using cutting-edge tools.</p>
+                    </div>
+                    <!-- Service 3 -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg reveal hover:shadow-xl transition duration-300" data-delay="200">
+                        <i class="fas fa-flask text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Research & Prototypes</h3>
+                        <p class="text-gray-600">End-to-end research project development, prototype engineering (e.g., solar-powered devices), and patent application support for novel innovations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-16 md:py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 reveal">Select Case Studies</h2>
+                
+                <!-- Search & Filter -->
+                <div class="flex justify-center mb-8 reveal">
+                    <input type="text" id="projectSearch" placeholder="Filter projects by keyword (e.g., water, ML, Python)..." class="w-full max-w-xl p-3 border border-gray-300 rounded-xl shadow-inner focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                
+                <!-- Projects Grid -->
+                <div id="projectList" class="grid lg:grid-cols-2 gap-8">
+
+                    <!-- Project 1: Water Quality Prediction -->
+                    <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden reveal" data-category="ml environmental python">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Water Quality Prediction Platform</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">Python</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">Machine Learning</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">Environmental Biotech</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Developed and implemented high-accuracy ML models (Random Forest, SVM, XGBoost) to predict water quality based on microbial and physico-chemical datasets, achieving 85-95% accuracy.</p>
+                            <a href="https://github.com/Thokhir/ML-Model_For-waterquality-prediction" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium transition duration-300"><i class="fab fa-github mr-1"></i> View Codebase</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Chennai Reservoir Dashboard -->
+                    <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden reveal" data-category="data-analytics power-bi time-series">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Reservoir Level Time-Series Dashboard</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Power BI</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Time Series</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Data Visualization</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Created an interactive dashboard tracking water levels across major metropolitan reservoirs, providing critical insights into hydrological trends and resource management.</p>
+                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium transition duration-300"><i class="fas fa-external-link-alt mr-1"></i> View Dashboard (Placeholder)</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: AI-Driven Herbicide Design -->
+                    <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden reveal" data-category="bioinformatics ml molecular-docking">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">AI-Driven Herbicide Design & Docking</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-medium">Molecular Docking</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-medium">AI</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-medium">Drug Design</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Innovative project designing AI-based herbicide molecules with enhanced binding and toxicity profiles using SwissDock, SwissADME, and Python analysis.</p>
+                            <a href="https://github.com/Thokhir/Docking_Herbicides" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium transition duration-300"><i class="fab fa-github mr-1"></i> View Codebase</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Organic Feed Innovation -->
+                    <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden reveal" data-category="innovation prototype r&d">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Organic Aquaculture Feed & Production Optimization</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-medium">Prototype</span>
+                                <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-medium">R&D</span>
+                                <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-medium">Entrepreneurial</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Developed and deployed organic shrimp and fish feed using natural food waste, including the design and fabrication of an optimized production machine.</p>
+                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium transition duration-300"><i class="fas fa-bolt mr-1"></i> Learn More (Internal)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills/Expertise Section -->
+        <section id="skills" class="py-16 md:py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 reveal">Core Expertise</h2>
+                
+                <div class="grid lg:grid-cols-3 gap-12">
+                    <!-- Column 1: Data Analysis & AI/ML -->
+                    <div class="reveal">
+                        <h3 class="text-2xl font-semibold text-blue-600 mb-4 border-b pb-2">Data & AI/ML</h3>
+                        <div class="space-y-4">
+                            <!-- Skill 1 -->
+                            <div class="skill-item">
+                                <p class="text-sm font-medium text-gray-700 mb-1">Python (Pandas, Scikit-learn, XGBoost)</p>
+                                <div class="skill-bar h-2 bg-gray-200 rounded-full"><span style="width:90%" data-width="90%">90%</span></div>
+                            </div>
+                            <!-- Skill 2 -->
+                            <div class="skill-item">
+                                <p class="text-sm font-medium text-gray-700 mb-1">Statistical Modeling (PCA, ANOVA, Regression)</p>
+                                <div class="skill-bar h-2 bg-gray-200 rounded-full"><span style="width:85%" data-width="85%">85%</span></div>
+                            </div>
+                            <!-- Skill 3 -->
+                            <div class="skill-item">
+                                <p class="text-sm font-medium text-gray-700 mb-1">Power BI & Tableau</p>
+                                <div class="skill-bar h-2 bg-gray-200 rounded-full"><span style="width:75%" data-width="75%">75%</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Bioinformatics & Genomics -->
+                    <div class="reveal" data-delay="100">
+                        <h3 class="text-2xl font-semibold text-blue-600 mb-4 border-b pb-2">Bioinformatics</h3>
+                        <div class="space-y-4">
+                            <!-- Skill 1 -->
+                            <div class="skill-item">
+                                <p class="text-sm font-medium text-gray-700 mb-1">Molecular Docking (AutoDock, Swiss Dock)</p>
+                                <div class="skill-bar h-2 bg-gray-200 rounded-full"><span style="width:80%" data-width="80%">80%</span></div>
+                            </div>
+                            <!-- Skill 2 -->
+                            <div class="skill-item">
+                                <p class="text-sm font-medium text-gray-700 mb-1">Sequence Analysis (BLAST, Clustal Omega)</p>
+                                <div class="skill-bar h-2 bg-gray-200 rounded-full"><span style="width:95%" data-width="95%">95%</span></div>
+                            </div>
+                            <!-- Skill 3 -->
+                            <div class="skill-item">
+                                <p class="text-sm font-medium text-gray-700 mb-1">Structural Visualization (PyMOL, ChimeraX)</p>
+                                <div class="skill-bar h-2 bg-gray-200 rounded-full"><span style="width:70%" data-width="70%">70%</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 3: Wet-Lab & Analytical -->
+                    <div class="reveal" data-delay="200">
+                        <h3 class="text-2xl font-semibold text-blue-600 mb-4 border-b pb-2">Wet-Lab & Analytical</h3>
+                        <div class="space-y-4">
+                            <!-- Skill 1 -->
+                            <div class="skill-item">
+                                <p class="text-sm font-medium text-gray-700 mb-1">Cell Culture & Molecular Biology (MTT, FACS, IHC)</p>
+                                <div class="skill-bar h-2 bg-gray-200 rounded-full"><span style="width:90%" data-width="90%">90%</span></div>
+                            </div>
+                            <!-- Skill 2 -->
+                            <div class="skill-item">
+                                <p class="text-sm font-medium text-gray-700 mb-1">HPLC, GC, AAS, NMR Operation</p>
+                                <div class="skill-bar h-2 bg-gray-200 rounded-full"><span style="width:85%" data-width="85%">85%</span></div>
+                            </div>
+                            <!-- Skill 3 -->
+                            <div class="skill-item">
+                                <p class="text-sm font-medium text-gray-700 mb-1">Confocal Microscopy (Nikon A1R)</p>
+                                <div class="skill-bar h-2 bg-gray-200 rounded-full"><span style="width:80%" data-width="80%">80%</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-20 bg-gray-50">
+            <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-4 text-gray-900 reveal">Let's Discuss Your Project</h2>
+                <p class="text-center text-gray-600 mb-12 reveal">We're ready to apply precision data science to your most challenging biological and environmental problems.</p>
+                
+                <div class="reveal">
+                    <!-- Contact Links -->
+                    <div class="flex justify-center gap-4 flex-wrap mb-8">
+                        <a href="mailto:sktbasha22@gmail.com" class="flex items-center text-blue-600 hover:text-blue-800 transition duration-300 font-medium">
+                            <i class="fas fa-envelope mr-2"></i> sktbasha22@gmail.com
+                        </a>
+                        <a href="https://wa.me/7671856965" class="flex items-center text-blue-600 hover:text-blue-800 transition duration-300 font-medium">
+                            <i class="fab fa-whatsapp mr-2"></i> +91-7671856965
+                        </a>
+                        <a href="https://www.linkedin.com/in/thokhir-basha-shaik-m-sc-ph-d-59498416" class="flex items-center text-blue-600 hover:text-blue-800 transition duration-300 font-medium">
+                            <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                        </a>
+                    </div>
+                    
+                    <!-- Contact Form (Using Formspree as an example backend) -->
+                    <form action="https://formspree.io/f/mblaqope" method="POST" class="bg-white p-8 rounded-xl shadow-2xl border border-gray-100 space-y-4">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <input type="text" name="name" placeholder="Your Name" required class="p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                            <input type="email" name="email" placeholder="Email Address" required class="p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <textarea name="message" rows="5" placeholder="Tell us about your consulting needs..." required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"></textarea>
+                        <button type="submit" class="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300 transform hover:scale-[1.01]">
+                            <i class="fas fa-paper-plane mr-2"></i> Send Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm">&copy; <span id="year">2024</span> BioAxiom Analytics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTop" aria-label="Scroll to top" class="fixed right-5 bottom-5 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 transform hover:scale-110">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+
+    <!-- JavaScript Logic -->
+    <script>
+        /* app.js logic integrated here */
+        const menuBtn = document.getElementById('menuBtn');
+        const nav = document.getElementById('nav');
+
+        /* ---------- Mobile nav toggle ---------- */
+        if (menuBtn && nav) {
+            menuBtn.addEventListener('click', () => {
+                const open = nav.classList.toggle('hidden'); // Use Tailwind 'hidden' to toggle visibility
+                menuBtn.setAttribute('aria-expanded', open ? 'false' : 'true'); // reversed logic for hidden/visible
+                const icon = menuBtn.querySelector('i');
+                if (open) {
+                    icon.classList.replace('fa-times', 'fa-bars');
+                } else {
+                    icon.classList.replace('fa-bars', 'fa-times');
+                }
+            });
+
+            // Close nav when an anchor link is clicked on mobile
+            nav.querySelectorAll('a[href^="#"]').forEach(a => {
+                a.addEventListener('click', () => {
+                    if (!nav.classList.contains('hidden')) {
+                        nav.classList.add('hidden');
+                        menuBtn.setAttribute('aria-expanded', 'false');
+                        menuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+                    }
+                });
+            });
+        }
+
+
+        /* ---------- Auto-update year ---------- */
+        const yearEl = document.getElementById('year');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+        /* ---------- Scroll to top ---------- */
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            if (!scrollTopBtn) return;
+            if (window.scrollY > 300) scrollTopBtn.classList.add('show');
+            else scrollTopBtn.classList.remove('show');
+        });
+        if (scrollTopBtn) {
+            scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        }
+
+        /* ---------- Project search/filter ---------- */
+        const searchInput = document.getElementById('projectSearch');
+        const projectList = document.getElementById('projectList');
+        if (searchInput && projectList) {
+            searchInput.addEventListener('input', () => {
+                const q = searchInput.value.trim().toLowerCase();
+                const cards = projectList.querySelectorAll('.project-card');
+
+                cards.forEach(card => {
+                    const textContent = (card.innerText || '').toLowerCase();
+                    const category = card.getAttribute('data-category') || '';
+                    
+                    if (textContent.includes(q) || category.includes(q)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        }
+
+        /* ---------- Reveal-on-scroll animations & Skill bar animations ---------- */
+        const revealItems = document.querySelectorAll('.reveal');
+        const skillBars = document.querySelectorAll('.skill-bar span');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const revealObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    
+                    // Specific logic for skill bars when they intersect
+                    if (entry.target.classList.contains('skill-item')) {
+                        const span = entry.target.querySelector('.skill-bar span');
+                        if (span) {
+                            const w = span.getAttribute('data-width') || '0%';
+                            span.style.width = w;
+                        }
+                    }
+
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        revealItems.forEach(i => revealObserver.observe(i));
+
+        /* ---------- Setup skill bars for animation (must happen before observer) ---------- */
+        skillBars.forEach(span => {
+            // Get the final width from the style attribute or data-width
+            const w = span.style.width || '0%';
+            span.setAttribute('data-width', w);
+            // Reset to 0% to start the animation from the beginning
+            span.style.width = '0%';
+        });
+
+        /* Force check on load (in case items are in viewport) */
+        window.addEventListener('load', () => {
+             // trigger intersection observer by scrolling a tiny bit (some browsers need this)
+            if ('requestAnimationFrame' in window) requestAnimationFrame(() => window.scrollTo({ top: 1, behavior: 'smooth' }));
+            requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        });
+
+    </script>
+</body>
+</html>
